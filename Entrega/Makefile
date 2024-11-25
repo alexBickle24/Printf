@@ -6,7 +6,7 @@
 #    By: alex <alex@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/23 08:21:01 by alex              #+#    #+#              #
-#    Updated: 2024/11/25 21:16:04 by alex             ###   ########.fr        #
+#    Updated: 2024/11/25 23:39:23 by alex             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ NAME = ft_printf.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 SRCS = ft_printf.c ft_printf_utils.c
-MAIN = test.c
 HEADERS = ft_printf.h
 OBJS = $(SRCS:.c=.o)
 
