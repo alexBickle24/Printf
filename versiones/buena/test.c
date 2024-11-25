@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 14:47:35 by alex              #+#    #+#             */
-/*   Updated: 2024/11/24 01:27:02 by alex             ###   ########.fr       */
+/*   Updated: 2024/11/25 17:01:33 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ int main()
     printf("len: %i\n", len);
     
     
-    len = ft_printf("Numero: %i, otro numero: %u y otro numero %d\n", 9200, 80008800, 1560025);
+    len = ft_printf("Numero: %i, otro numero: %u y otro numero %d\n", -9200, 80008800, 1560025);
     printf("ft len: %i\n", len);
-    len = printf("Numero: %i, otro numero: %u y otro numero %d\n", 9200, 80008800, 1560025);
+    len = printf("Numero: %i, otro numero: %u y otro numero %d\n", -9200, 80008800, 1560025);
     printf("len: %i\n\n", len);
     
     
@@ -59,7 +59,7 @@ int main()
     len = printf("hex: %x\n", 15658);
     printf("len: %i\n\n", len);
     
-    len = ft_printf("HEX: %X\n", ULONG_MAX);
+    len = ft_printf("HEX: %X\n", UINT_MAX);
     printf("ft len: %i\n", len);
     len = printf("HEX: %X\n", UINT_MAX);
     printf("len: %i\n\n", len);
