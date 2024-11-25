@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 14:47:35 by alex              #+#    #+#             */
-/*   Updated: 2024/11/24 01:27:02 by alex             ###   ########.fr       */
+/*   Updated: 2024/11/23 21:54:54 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ int main()
     printf("len: %i\n", len);
     
     
-    len = ft_printf("Numero: %i, otro numero: %u y otro numero %d\n", 9200, 80008800, 1560025);
+    len = ft_printf("Numero: %i, otro numero: %u y otro numero %d\n", 92, 800098880, 1560025);
     printf("ft len: %i\n", len);
-    len = printf("Numero: %i, otro numero: %u y otro numero %d\n", 9200, 80008800, 1560025);
+    len = printf("Numero: %i, otro numero: %u y otro numero %d\n", 92, 800098880, 1560025);
     printf("len: %i\n\n", len);
     
     

@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 05:57:10 by alex              #+#    #+#             */
-/*   Updated: 2024/11/24 01:29:27 by alex             ###   ########.fr       */
+/*   Updated: 2024/11/23 07:55:25 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,35 +37,48 @@ int ft_putstr_c(char *string)
 
 int ft_putnbr_c(int n, int count)
 {
-    long long aux;
+    int x;
+    long temp;
 
-    aux = (long long)n;
-    if (aux < 0)
+    temp = (long long)n;
+    x = 1;
+    if (temp < 0)
     {
         count = count + ft_putchar_c('-');
-        aux = aux * -1;
+        temp = temp * -1;
     }
-    if (n >= 10)
+    while((temp / x) >= 10)
+        x = x * 10;
+    if (temp >= 10)
     {
-        count = ft_putnbr_c((aux / 10), count);
-        count = ft_putnbr_c((aux % 10), count);
+        count = count + ft_putchar_c((temp / x) + 48);
+        return(ft_putnbr_c((int)(temp % x), count));
     }
     else
-        count = count + ft_putchar_c((aux + '0'));
-    return(count);
+    {
+        count = count + ft_putchar_c((temp + '0'));
+        return(count);
+    }
 }
 
 
-int ft_putunbr_base_c(unsigned int unbr, unsigned int base, int count, char f)
+int ft_put_unbr_base_c(unsigned int n, unsigned int base, int count, char flag)
 {
-    if (unbr >= base)
+    unsigned int x;
+
+    x = 1;
+    while((n / x) >= base)
+        x = x * base;
+    if (n >= base)
     {
-        count = ft_putunbr_base_c((unbr / base), base, count, f);
-        count = ft_putunbr_base_c((unbr % base), base, count, f);
+        count = count + ft_putbase_c("0123456789abcdef", base, (n / x), flag);
+        return(ft_put_unbr_base_c((n % x), base, count, flag));
     }
     else
-        count = count + ft_putchar_base_c("0123456789abcdef", base, unbr, f);
-    return(count);
+    {
+        count = count + ft_putbase_c("0123456789abcdef", base, (n / x), flag);
+        return(count);
+    }
 }
 
 
@@ -80,31 +93,38 @@ int ft_putadress_c(unsigned long n)
         return(5);
     }
     write(1, "0x", 2);
-    count = count + ft_put_ulong_base_c(n, 16, count, 0);
+    count = 2;
+    count = count + ft_put_ul_base_c(n, 16, count, 0);
     return(count);
 }
 
 
-int ft_put_ulong_base_c(unsigned long n, unsigned long base, int count, char f)
-
+int ft_put_ul_base_c(unsigned long n, unsigned long base, int count, char flag)
 {
+    unsigned long x;
+
+    x = 1;
+    while((n / x) >= base)
+        x = x * base;
     if (n >= base)
     {
-        count = ft_put_ulong_base_c((n / base), base, count, f);
-        count = ft_put_ulong_base_c((n % base), base, count, f);
+        count = count + ft_putbase_c("0123456789abcdef", 16, (n / x), flag);
+        return(ft_put_ul_base_c((n % x), 16, count, flag));
     }
     else
-        count = count + ft_putchar_base_c("0123456789abcdef", base, n, f);
-    return(count);
+    {
+        count = count + ft_putbase_c("0123456789abcdef", 16, (n / x), flag);
+        return(count);
+    }
 }
 
 
-int ft_putchar_base_c(char *elements, unsigned int base, unsigned int n, char f)
+int ft_putbase_c(char *elements, unsigned int base, unsigned int n, char flag)
 {
     char aux;
     if (n < base)
     {
-        if (f && n >= 10)
+        if (flag && n >= 10)
         {
             aux = elements[n] - 32;
             write(1, &aux, 1);
@@ -179,12 +199,12 @@ int ft_putnbr_c(int n, int count)
 }
 
 
-void ft_putbase(char *elements, int base, long n, char f)
+void ft_putbase(char *elements, int base, long n, char flag)
 {
     int i;
 
     i = 0;
-    if (f)
+    if (flag)
     {
         while(i >= 10 && elements[i] != '\0')
         {
@@ -231,67 +251,6 @@ int ft_put_unbr_c(unsigned int n, int count)
     else
     {
         count = count + ft_putchar_c((n + '0'));
-        return(count);
-    }
-}
-*/
-
-///este ocn base no dunciona pero es un de la veriones del putnbr
-/*
-int ft_put_unbr_base_c(unsigned int n, unsigned int base, int count, char f)
-{
-    unsigned int x;
-    unsigned int y;
-    int dif;
-
-    x = 1;
-    y = 10;
-    while((n / x) >= base)
-        x = x * base;
-    if (n >= base)
-    {
-        count = count + ft_putbase_c("0123456789abcdef", base, (n / x), f);
-        dif = ((n / x) * y) - (n / (x / y));
-        while(!dif && ((n % (x / y)) != 0))
-        {
-            //haba que meter un if (n % x) == para poder controlar el caso del negativo
-            count = count + ft_putbase_c("0123456789abcdef", base, 0, f);
-            y = y * base;
-            dif = ((n / x) * y) - (n / (x / y));
-        
-        }
-        return(ft_put_unbr_base_c((n % x), base, count, f));
-    }
-    else
-    {
-        count = count + ft_putbase_c("0123456789abcdef", base, n, f);
-        return(count);
-    }
-}
-
-
-int ft_putnbr_c(int n, int count)
-{
-    int x;
-    long temp;
-
-    temp = (long long)n;
-    x = 1;
-    if (temp < 0)
-    {
-        count = count + ft_putchar_c('-');
-        temp = temp * -1;
-    }
-    while((temp / x) >= 10)
-        x = x * 10;
-    if (temp >= 10)
-    {
-        count = count + ft_putchar_c((temp / x) + 48);
-        return(ft_putnbr_c((int)(temp % x), count));
-    }
-    else
-    {
-        count = count + ft_putchar_c((temp + '0'));
         return(count);
     }
 }

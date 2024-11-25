@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 18:21:38 by alex              #+#    #+#             */
-/*   Updated: 2024/11/24 00:58:04 by alex             ###   ########.fr       */
+/*   Updated: 2024/11/23 07:55:53 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,13 @@ int ft_select_cases(char type, va_list arguments, int count)
 	else if (type == 'd' || type == 'i')
 		count = ft_putnbr_c(va_arg(arguments, int), count);
 	else if (type == 'u')
-		count = ft_putunbr_base_c(va_arg(arguments, unsigned int), 10, count, 0);
+		count = ft_put_unbr_base_c(va_arg(arguments, unsigned int), 10, count, 0);
 	else if (type == 'p')
 		count = count + ft_putadress_c(va_arg(arguments, unsigned long));
 	else if (type == 'x')
-		count = ft_putunbr_base_c(va_arg(arguments, unsigned int), 16, count, 0);
+		count = ft_put_unbr_base_c(va_arg(arguments, unsigned int), 16, count, 0);
 	else if (type == 'X')
-		count = ft_putunbr_base_c(va_arg(arguments, unsigned int), 16, count, 1);
+		count = ft_put_unbr_base_c(va_arg(arguments, unsigned int), 16, count, 1);
 	return (count);
 }
 
