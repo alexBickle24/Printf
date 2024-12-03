@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 18:21:38 by alex              #+#    #+#             */
-/*   Updated: 2024/11/25 22:51:37 by alex             ###   ########.fr       */
+/*   Updated: 2024/12/03 08:20:31 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int  ft_printf(char const *format, ...)
 	}
 	return(count);
 }
-
 
 int ft_select_cases(char type, va_list arguments, int count)
 {

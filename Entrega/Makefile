@@ -6,7 +6,7 @@
 #    By: alex <alex@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/23 08:21:01 by alex              #+#    #+#              #
-#    Updated: 2024/11/25 23:39:23 by alex             ###   ########.fr        #
+#    Updated: 2024/12/03 08:14:04 by alex             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-test: $(NAME) $(MAIN)
+test: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)

@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 05:57:10 by alex              #+#    #+#             */
-/*   Updated: 2024/11/25 22:51:51 by alex             ###   ########.fr       */
+/*   Updated: 2024/11/28 02:55:26 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,19 +99,19 @@ int ft_put_ulong_base_c(unsigned long n, unsigned long base, int count, char f)
 }
 
 
-int ft_putchar_base_c(char *elements, unsigned int base, unsigned int n, char f)
+int ft_putchar_base_c(char *element, unsigned int base, unsigned int n, char f)
 {
     char aux;
     if (n < base)
     {
         if (f && n >= 10)
         {
-            aux = elements[n] - 32;
+            aux = element[n] - 32;
             write(1, &aux, 1);
             return(1);
         }
     }
-    write(1, &elements[n], 1);
+    write(1, &element[n], 1);
     return(1);
 }
 
@@ -179,21 +179,21 @@ int ft_putnbr_c(int n, int count)
 }
 
 
-void ft_putbase(char *elements, int base, long n, char f)
+void ft_putbase(char *element, int base, long n, char f)
 {
     int i;
 
     i = 0;
     if (f)
     {
-        while(i >= 10 && elements[i] != '\0')
+        while(i >= 10 && element[i] != '\0')
         {
-            elements[i] = elements[i] - 32;
+            element[i] = element[i] - 32;
             i++;
         }
     }
     if (n < base)
-        write(1, &elements[n], 1);
+        write(1, &element[n], 1);
 }
 
 void ft_putnbr_base(int n, int base)
