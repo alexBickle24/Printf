@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 18:21:38 by alex              #+#    #+#             */
-/*   Updated: 2024/12/05 01:04:04 by alex             ###   ########.fr       */
+/*   Updated: 2024/12/09 02:32:13 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@ int	ft_printf(char const *format, ...)
 	count = 0;
 	while (format[++i] != '\0')
 	{
-		if (format[i] == '"' && (format[i + 1] == '\0' || i == 0))
-			write(1, &format[i], 1);
-		else if (format[i] == '%' && format[i + 1] != 0)
+		if (format[i] == '%' && format[i + 1] != 0)
 			count = ft_select_cases(format[++i], arguments, count);
 		else if (format[i] == '%' && format[i + 1] == 0)
 		{
@@ -38,6 +36,7 @@ int	ft_printf(char const *format, ...)
 			count++;
 		}
 	}
+	va_end(arguments);
 	return (count);
 }
 

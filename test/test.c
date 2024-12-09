@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 14:47:35 by alex              #+#    #+#             */
-/*   Updated: 2024/11/23 21:54:54 by alex             ###   ########.fr       */
+/*   Updated: 2024/12/04 23:51:45 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int main()
     
     len = ft_printf("hex: %x\n", 15685);
     printf("ft len: %i\n", len);
-    len = printf("hex: %x\n", 15658);
+    len = printf("hex: %x\n", 15685);
     printf("len: %i\n\n", len);
     
     len = ft_printf("HEX: %X\n", ULONG_MAX);
