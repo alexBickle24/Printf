@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 05:57:10 by alex              #+#    #+#             */
-/*   Updated: 2024/11/28 02:55:26 by alex             ###   ########.fr       */
+/*   Updated: 2024/12/09 03:00:22 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int ft_putadress_c(unsigned long n)
     }
     write(1, "0x", 2);
     count = count + ft_put_ulong_base_c(n, 16, count, 0);
-    return(count);
+    return(count + 2);
 }
 
 

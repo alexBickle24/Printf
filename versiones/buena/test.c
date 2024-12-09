@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 14:47:35 by alex              #+#    #+#             */
-/*   Updated: 2024/11/26 00:23:14 by alex             ###   ########.fr       */
+/*   Updated: 2024/12/09 03:04:24 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ int main()
     len = printf("Me llamo Iñigo Montoya\n");
     printf("len: %i\n", len);
     
-    
-    len = ft_printf("Hola. Me llamo %s. Mataste a mi padre. Prepárate a morir %c\n", "Iñigo Montoya", 'x');
+    //las comillas simples no las prime nunca por pantalla (esto quien lo hace el compilador, shell o quien)
+    len = ft_printf("Hola. Me llamo %s. Mataste "" a mi padre. Prepárate a morir %c\n", "Iñigo Montoya", 'x');
     printf("ft len: %i\n", len);
-    len = printf("Hola. Me llamo %s. Mataste a mi padre. Prepárate a morir %c\n", "Iñigo Montoya", 'x');
+    len = printf("Hola. Me llamo %s. Mataste a "" mi padre. Prepárate a morir %c\n", "Iñigo Montoya", 'x');
     printf("len: %i\n", len);
 
 
@@ -85,7 +85,7 @@ int main()
     printf("ft len: %i\n", len);
     printf("\n");*/
 
-    //printf("Hola", nully);
+    printf("Hola", nully);
     ft_printf("Hola", nully);
     printf("\n");
     //printf("%s");
