@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 18:21:38 by alex              #+#    #+#             */
-/*   Updated: 2024/12/09 02:32:13 by alex             ###   ########.fr       */
+/*   Updated: 2024/12/11 01:33:47 by alcarril         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int	ft_select_cases(char type, va_list arguments, int count)
 {
 	if (type == 'c' || type == '%')
 		count = count + ft_putchar_c(va_arg(arguments, int));
+	if (type == '%')
+		count = count + ft_putchar_c('%');
 	else if (type == 's')
 		count = count + ft_putstr_c(va_arg(arguments, char *));
 	else if (type == 'd' || type == 'i')

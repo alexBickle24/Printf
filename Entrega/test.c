@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 14:47:35 by alex              #+#    #+#             */
-/*   Updated: 2024/12/11 01:39:17 by alcarril         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 /* ************************************************************************** */
 /*                                                                            */
@@ -66,9 +55,9 @@ int main()
     printf("len: %i\n\n", len);
  
 
-    len = ft_printf("Puntero: %p\n", ptr);
+    len = ft_printf("Puntero: %p\n", ULLONG_MAX);
     printf("ft len: %i\n", len);
-    len = printf("Puntero: %p\n", ptr);
+    len = printf("Puntero: %p\n", ULLONG_MAX);
     printf("len: %i\n\n", len);
     free(ptr);
     

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 18:21:38 by alex              #+#    #+#             */
-/*   Updated: 2024/12/09 03:02:36 by alex             ###   ########.fr       */
+/*   Updated: 2024/12/11 01:29:35 by alcarril         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	ft_printf(char const *format, ...)
 	va_list	arguments;
 	int		i;
 	int		count;
-
 
 	va_start(arguments, format);
 	i = -1;

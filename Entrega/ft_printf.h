@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 06:12:39 by alex              #+#    #+#             */
-/*   Updated: 2024/11/24 00:59:36 by alex             ###   ########.fr       */
+/*   Updated: 2024/12/11 01:42:52 by alcarril         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 int	ft_strlen_c(const char *s);
 int	ft_printf(char const *format, ...);
