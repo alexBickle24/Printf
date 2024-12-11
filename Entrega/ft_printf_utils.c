@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 05:57:10 by alex              #+#    #+#             */
-/*   Updated: 2024/12/05 01:01:45 by alex             ###   ########.fr       */
+/*   Updated: 2024/12/11 04:54:35 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	ft_putadress_c(unsigned long n)
 	}
 	write(1, "0x", 2);
 	count = count + ft_put_ulong_base_c(n, 16, count, 0);
-	return (count);
+	return (count + 2);
 }
 
 int	ft_put_ulong_base_c(unsigned long n, unsigned long base, int count, char f)
