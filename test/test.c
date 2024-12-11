@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 14:47:35 by alex              #+#    #+#             */
-/*   Updated: 2024/12/04 23:51:45 by alex             ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 /* ************************************************************************** */
 /*                                                                            */
@@ -26,6 +15,7 @@
 
 int main()
 {
+    
     char *ptr = malloc(1);
     char *nully = 0;
     int len = 0;
@@ -35,10 +25,10 @@ int main()
     len = printf("Me llamo Iñigo Montoya\n");
     printf("len: %i\n", len);
     
-    
-    len = ft_printf("Hola. Me llamo %s. Mataste a mi padre. Prepárate a morir %c\n", "Iñigo Montoya", 'x');
+    //las comillas simples no las prime nunca por pantalla (esto quien lo hace el compilador, shell o quien)
+    len = ft_printf("Hola. Me llamo %s. Mataste "" a mi padre. Prepárate a morir %c\n", "Iñigo Montoya", 'x');
     printf("ft len: %i\n", len);
-    len = printf("Hola. Me llamo %s. Mataste a mi padre. Prepárate a morir %c\n", "Iñigo Montoya", 'x');
+    len = printf("Hola. Me llamo %s. Mataste a "" mi padre. Prepárate a morir %c\n", "Iñigo Montoya", 'x');
     printf("len: %i\n", len);
 
 
@@ -48,26 +38,56 @@ int main()
     printf("len: %i\n", len);
     
     
-    len = ft_printf("Numero: %i, otro numero: %u y otro numero %d\n", 92, 800098880, 1560025);
+    len = ft_printf("Numero: %i, otro numero: %u y otro numero %d\n", -9200, 80008800, 1560025);
     printf("ft len: %i\n", len);
-    len = printf("Numero: %i, otro numero: %u y otro numero %d\n", 92, 800098880, 1560025);
+    len = printf("Numero: %i, otro numero: %u y otro numero %d\n", -9200, 80008800, 1560025);
     printf("len: %i\n\n", len);
     
     
     len = ft_printf("hex: %x\n", 15685);
     printf("ft len: %i\n", len);
-    len = printf("hex: %x\n", 15685);
+    len = printf("hex: %x\n", 15658);
     printf("len: %i\n\n", len);
     
-    len = ft_printf("HEX: %X\n", ULONG_MAX);
+    len = ft_printf("HEX: %X\n", UINT_MAX);
     printf("ft len: %i\n", len);
     len = printf("HEX: %X\n", UINT_MAX);
     printf("len: %i\n\n", len);
  
 
-    len = ft_printf("Puntero: %p\n", ptr);
+    len = ft_printf("Puntero: %p\n", -1);
     printf("ft len: %i\n", len);
-    len = printf("Puntero: %p\n", ptr);
+    len = printf("Puntero: %p\n", -1);
+    printf("len: %i\n\n", len);
+
+    len = ft_printf("Puntero: %p\n",LONG_MIN);
+    printf("ft len: %i\n", len);
+    len = printf("Puntero: %p\n", LONG_MIN);
+    printf("len: %i\n\n", len);
+
+    len = ft_printf("Puntero: %p\n", LONG_MAX);
+    printf("ft len: %i\n", len);
+    len = printf("Puntero: %p\n", LONG_MAX);
+    printf("len: %i\n\n", len);
+
+    len = ft_printf("Puntero: %p\n", UINT_MAX);
+    printf("ft len: %i\n", len);
+    len = printf("Puntero: %p\n", UINT_MAX);
+    printf("len: %i\n\n", len);
+
+    len = ft_printf("Puntero: %p\n", INT_MIN);
+    printf("ft len: %i\n", len);
+    len = printf("Puntero: %p\n", INT_MIN);
+    printf("len: %i\n\n", len);
+
+    len = ft_printf("Puntero: %p\n", -ULONG_MAX);
+    printf("ft len: %i\n", len);
+    len = printf("Puntero: %p\n", -ULONG_MAX);
+    printf("len: %i\n\n", len);
+
+    len = ft_printf("Puntero: %p\n", ULONG_MAX);
+    printf("ft len: %i\n", len);
+    len = printf("Puntero: %p\n", ULONG_MAX);
     printf("len: %i\n\n", len);
     free(ptr);
     
@@ -83,8 +103,8 @@ int main()
     len = ft_printf("Hola %s %", "Agapito");
     printf("ft len: %i\n", len);
     printf("\n");*/
-
-    //printf("Hola", nully);
+	/*
+    printf("Hola", nully);
     ft_printf("Hola", nully);
     printf("\n");
     //printf("%s");
@@ -92,4 +112,5 @@ int main()
     //ft_printf("%s");
     printf("\n");
     return (0);
+	*/
 }
