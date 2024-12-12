@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alex <alex@student.42.fr>                  +#+  +:+       +#+         #
+#    By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/23 08:21:01 by alex              #+#    #+#              #
-#    Updated: 2024/12/11 05:08:33 by alex             ###   ########.fr        #
+#    Updated: 2024/12/12 20:04:41 by alcarril         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,8 +29,8 @@ clean:
 	rm *.o
 	
 fclean:
-	rm *.o 
-	rm $(NAME)
+	rm -f *.o 
+	rm -f $(NAME)
 	
 re: fclean make
 
