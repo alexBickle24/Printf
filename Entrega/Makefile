@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alcarril <alcarril@student.42.fr>          +#+  +:+       +#+         #
+#    By: alex <alex@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/23 08:21:01 by alex              #+#    #+#              #
-#    Updated: 2024/12/12 20:04:41 by alcarril         ###   ########.fr        #
+#    Updated: 2024/12/17 01:52:12 by alex             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,10 +26,9 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm *.o
+	rm -f $(OBJS)
 	
-fclean:
-	rm -f *.o 
+fclean: clean
 	rm -f $(NAME)
 	
 re: fclean make
